@@ -23,7 +23,7 @@ El proyecto fue realizado como práctica para reforzar el manejo del DOM, el uso
 - Filtrar tareas por categoría.
 - Contador dinámico de tareas pendientes.
 - Cambiar entre modo claro y modo oscuro.
-- Guardar tareas y preferencias del usuario utilizando `localStorage`.
+- Guardar tareas y preferencias del usuario utilizando localStorage.
 
 ---
 
@@ -37,7 +37,7 @@ El proyecto fue realizado como práctica para reforzar el manejo del DOM, el uso
 
 ## Persistencia de datos
 
-Las tareas, el estado de completado y el tema seleccionado se almacenan en el navegador mediante `localStorage`, lo que permite conservar la información incluso después de recargar la página.
+Las tareas, el estado de completado y el tema seleccionado se almacenan en el navegador mediante localStorage, lo que permite conservar la información incluso después de recargar la página.
 
 ---
 
