@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Lista de Tareas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📝 Mi Lista de Tareas</h1>
+      <button id="btn-tema" class="tema" type="button" aria-label="Cambiar tema">
+        Modo oscuro
+      </button>
+    </div>
+
+    <!-- Formulario para agregar tareas -->
+    <form id="form-tarea" autocomplete="off">
+      <input
+        type="text"
+        id="input-tarea"
+        placeholder="¿Qué necesitas hacer?"
+        required
+        maxlength="200"
+      />
+
+      <input type="date" id="input-fecha" aria-label="Fecha límite" />
+
+      <select id="input-categoria" aria-label="Categoría">
+        <option value="personal">Personal</option>
+        <option value="trabajo">Trabajo</option>
+        <option value="escuela">Escuela</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!-- Filtros -->
+    <div class="barra-filtros">
+      <div class="filtros">
+        <button class="filtro activo" data-filtro="todas" type="button">Todas</button>
+        <button class="filtro" data-filtro="pendientes" type="button">Pendientes</button>
+        <button class="filtro" data-filtro="completadas" type="button">Completadas</button>
+      </div>
+
+      <!-- Filtro por categoría -->
+      <select id="filtro-categoria" class="filtro-categoria" aria-label="Filtrar por categoría">
+        <option value="todas">Todas las categorías</option>
+        <option value="personal">Personal</option>
+        <option value="trabajo">Trabajo</option>
+        <option value="escuela">Escuela</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+
+    <!-- Lista de tareas -->
+    <ul id="lista-tareas"></ul>
+
+    <!-- Contador -->
+    <p class="contador">
+      <span id="contador-pendientes">0</span> tareas pendientes
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

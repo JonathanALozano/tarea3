@@ -1,0 +1,386 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg1: #667eea;
+  --bg2: #764ba2;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --border: #e0e0e0;
+  --accent: #667eea;
+  --danger: #dc3545;
+  --warn: #ff9800;
+  --late: #e53935;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: var(--text);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+}
+
+/* Botón tema */
+.tema {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* Formulario */
+#form-tarea {
+  display: grid;
+  grid-template-columns: 1fr 160px 160px 110px;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+#input-tarea,
+#input-fecha,
+#input-categoria {
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+#input-tarea:focus,
+#input-fecha:focus,
+#input-categoria:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#form-tarea button {
+  padding: 12px 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#form-tarea button:hover {
+  background: #5a67d8;
+}
+
+/* Barra filtros */
+.barra-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  padding: 8px 14px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.filtro:hover {
+  background: #e0e0e0;
+}
+
+.filtro.activo {
+  background: var(--accent);
+  color: white;
+}
+
+/* Filtro categoría */
+.filtro-categoria {
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Lista */
+#lista-tareas {
+  list-style: none;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.tarea:hover {
+  background: #f0f0f0;
+  transform: translateX(4px);
+}
+
+.tarea.completada {
+  opacity: 0.65;
+}
+
+.tarea.completada .tarea-texto {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Etiquetas de estado */
+.tarea.por-vencer {
+  border-left: 6px solid var(--warn);
+}
+
+.tarea.vencida {
+  border-left: 6px solid var(--late);
+}
+
+/* Checkbox */
+.tarea input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+/* Contenido tarea */
+.tarea-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tarea-texto {
+  font-size: 1rem;
+  color: #333;
+  word-break: break-word;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.categoria {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #eee;
+  color: #333;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.fecha {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Acciones */
+.acciones {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-editar,
+.btn-guardar,
+.btn-cancelar,
+.btn-eliminar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 6px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.btn-editar:hover,
+.btn-guardar:hover,
+.btn-cancelar:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.btn-eliminar {
+  color: var(--danger);
+}
+
+.btn-eliminar:hover {
+  background: rgba(220, 53, 69, 0.12);
+}
+
+/* Edit inline */
+.editar-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.editar-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Contador */
+.contador {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+/* Mensaje sin tareas */
+.sin-tareas {
+  text-align: center;
+  color: #999;
+  padding: 26px;
+  font-style: italic;
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tarea {
+  animation: aparecer 0.22s ease;
+}
+
+/* Animación antes de eliminar */
+@keyframes salir {
+  to {
+    opacity: 0;
+    transform: translateX(25px);
+    height: 0;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.tarea.saliendo {
+  animation: salir 0.25s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  #form-tarea {
+    grid-template-columns: 1fr 1fr;
+  }
+  #form-tarea button {
+    grid-column: span 2;
+  }
+}
+
+/* ===== Dark mode ===== */
+body.dark {
+  background: #0f172a;
+}
+
+body.dark .container {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark h1 { color: #e5e7eb; }
+
+body.dark #input-tarea,
+body.dark #input-fecha,
+body.dark #input-categoria,
+body.dark .filtro-categoria,
+body.dark .editar-input {
+  background: #0b1220;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+body.dark .tarea {
+  background: #0b1220;
+}
+
+body.dark .tarea:hover {
+  background: #0f1b33;
+}
+
+body.dark .filtro {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark .filtro.activo {
+  background: var(--accent);
+  color: #fff;
+}
+
+body.dark .categoria {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark .fecha,
+body.dark .contador {
+  color: #cbd5e1;
+}
+
+body.dark .tema {
+  background: #e5e7eb;
+  color: #111;
+}
